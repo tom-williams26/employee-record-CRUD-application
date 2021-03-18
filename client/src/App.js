@@ -84,6 +84,10 @@ function App() {
         <button onClick={getEmployees}>Update Employee</button>
         <button>Delete Employee</button>
       </div>
+      <div className="border-line"></div>
+      <div className="display-employee">
+        <button>Display Employees</button>
+      </div>
     </div>
   );
 }

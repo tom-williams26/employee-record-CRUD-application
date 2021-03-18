@@ -40,3 +40,17 @@
 .employee-entry button:hover {
   cursor: pointer;
 }
+
+.border-line {
+  margin: 3rem;
+  width: 100%;
+  border-top: 2px solid black;
+}
+
+.display-employee {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
