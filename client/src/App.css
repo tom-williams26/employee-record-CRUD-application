@@ -1,3 +1,42 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.employee-entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(172, 172, 172, 0.568);
+  width: 35vw;
+}
+.employee-entry .record {
+  width: 95%;
+
+  display: flex;
+  justify-content: space-between;
+  /* background-color: blue; */
+  padding: 1rem 0;
+}
+.employee-entry .record label {
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.employee-entry input {
+  width: 60%;
+  font-size: 1rem;
+  /* background-color: aqua; */
+}
+.employee-entry button {
+  width: 15rem;
+  height: 3rem;
+  margin: 1rem 0;
+}
+.employee-entry button:hover {
+  cursor: pointer;
 }
