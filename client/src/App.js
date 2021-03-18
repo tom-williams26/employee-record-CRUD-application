@@ -9,6 +9,8 @@ function App() {
   const [position, setPosition] = useState('');
   const [wage, setWage] = useState(0);
 
+  const [employeeRecords, setEmployeeRecords] = useState([]);
+
   const addEmployee = () => {
     axios
       .post('http://localhost:5000/database/create', {
@@ -21,6 +23,11 @@ function App() {
       .then(() => {
         console.log('Attempting to store new employee');
       });
+
+    const getEmployees = ()=> {
+      axios.post('http://localhost:5000/database/employees').then((response) => {
+        console.log(response);
+      })
   };
   return (
     <div className="App">
@@ -74,7 +81,7 @@ function App() {
           />
         </div>
         <button onClick={addEmployee}>Add Employee</button>
-        <button>Update Employee</button>
+        <button onClick={getEmployees}>Update Employee</button>
         <button>Delete Employee</button>
       </div>
     </div>
