@@ -41,4 +41,13 @@ router.post('/create', (req, res) => {
   });
 });
 
+router.get('/employees', (req, res) => {
+  const sqlSelect = 'SELECT * FROM employees';
+
+  db.query(sqlSelect, (err, result) => {
+    if (err) throw err.message;
+    res.send(result);
+  });
+});
+
 module.exports = router;

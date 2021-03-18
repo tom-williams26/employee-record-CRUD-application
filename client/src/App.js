@@ -23,11 +23,11 @@ function App() {
       .then(() => {
         console.log('Attempting to store new employee');
       });
-
-    const getEmployees = ()=> {
-      axios.post('http://localhost:5000/database/employees').then((response) => {
-        console.log(response);
-      })
+  };
+  const getEmployees = () => {
+    axios.post('http://localhost:5000/database/employees').then((response) => {
+      console.log(response);
+    });
   };
   return (
     <div className="App">
@@ -87,5 +87,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
