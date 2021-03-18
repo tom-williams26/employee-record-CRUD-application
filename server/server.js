@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const database = require('./routes/database');
 
 // Variables
@@ -9,6 +10,7 @@ const port = process.env.API_PORT || 5000;
 // Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 // For all of the routes, use the routes specified in the routes module
 

@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import './App.css';
 
@@ -8,6 +9,19 @@ function App() {
   const [position, setPosition] = useState('');
   const [wage, setWage] = useState(0);
 
+  const addEmployee = () => {
+    axios
+      .post('http://localhost:5000/database/create', {
+        name: name,
+        age: age,
+        address: address,
+        position: position,
+        wage: wage,
+      })
+      .then(() => {
+        console.log('Attempting to store new employee');
+      });
+  };
   return (
     <div className="App">
       <div>
@@ -59,7 +73,7 @@ function App() {
             }}
           />
         </div>
-        <button>Add Employee</button>
+        <button onClick={addEmployee}>Add Employee</button>
         <button>Update Employee</button>
         <button>Delete Employee</button>
       </div>
