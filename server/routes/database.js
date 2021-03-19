@@ -41,6 +41,26 @@ router.post('/create', (req, res) => {
   });
 });
 
+router.put('/update', (req, res) => {
+  const { id, wage } = req.body;
+  const sqlUpdate = 'UPDATE employees SET wage = ? WHERE id = ?';
+
+  db.query(sqlUpdate, [wage, id], (err, result) => {
+    if (err) throw err.message;
+    res.send('Employee data added...');
+  });
+});
+
+router.delete('/delete/:id', (req, res) => {
+  const { id } = req.params;
+  const sqlDelete = 'DELETE FROM employees WHERE id = ?';
+
+  db.query(sqlDelete, id, (err, result) => {
+    if (err) throw err.message;
+    res.send('Employee record deleted...');
+  });
+});
+
 router.get('/employees', (req, res) => {
   const sqlSelect = 'SELECT * FROM employees';
 
